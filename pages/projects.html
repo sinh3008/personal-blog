@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <script>if(localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark-mode');</script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Lê Xuân Sinh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="pt-navbar container">
+        <section class="fade-up" style="margin-bottom: 3rem;">
+            <h1 style="font-size: 4rem; margin-bottom: 1rem;" data-i18n="projects.title">Dự Án Chọn Lọc</h1>
+            <p class="text-lead" data-i18n="projects.desc">Tuyển tập những số liệu hoạt động đo lường hiệu suất chạy quảng cáo số, thay đổi bản sắc nhãn hàng và các báo cáo tự làm về content media.</p>
+        </section>
+
+        <section class="section-padding fade-up">
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-i18n="projects.filter_all">Toàn Bộ Khối Công Việc</button>
+                <button class="filter-btn" data-i18n="projects.filter_camp">Chiến Dịch Marketing</button>
+                <button class="filter-btn" data-i18n="projects.filter_brand">Bộ Nhận Diện</button>
+                <button class="filter-btn" data-i18n="projects.filter_ads">Hiệu Suất Quảng Cáo</button>
+                <button class="filter-btn" data-i18n="projects.filter_ai">Công Nghệ Workflow AI</button>
+            </div>
+
+            <div class="grid-2" id="projects-grid"></div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="/data/site.js"></script>
+    <script src="/data/translations/vi.js"></script>
+    <script src="/data/translations/en.js"></script>
+        <script src="/scripts/utils.js"></script>
+    <script src="/scripts/i18n.js"></script>
+    <script src="/scripts/components.js"></script>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/page-init.js"></script>
+</body>
+</html>
+
+

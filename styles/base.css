@@ -1,0 +1,153 @@
+/* base.css */
+/* ============================================================
+   FUTURISTIC TECH COLOR SYSTEM — Deep Space Cyberpunk
+   ============================================================ */
+:root {
+    --font-primary: 'Be Vietnam Pro', sans-serif;
+
+    /* ── Deep Space Dark Theme (DEFAULT) ── */
+    --color-bg:          #050A14;     /* Near-black space */
+    --color-bg-2:        #080E1C;     /* Surface layer */
+    --color-text:        #E8F4FD;     /* Crisp off-white */
+    --color-text-light:  #6B8CAE;     /* Muted steel-blue */
+
+    /* Neon Accents */
+    --color-primary:     #00D4FF;     /* Electric Cyan */
+    --color-primary-rgb: 0, 212, 255;
+    --color-violet:      #7C3AED;     /* Deep Violet */
+    --color-violet-rgb:  124, 58, 237;
+    --color-green:       #00FFA3;     /* Neon Mint */
+    --color-green-rgb:   0, 255, 163;
+    --color-secondary:   #0D1929;     /* Dark surface card */
+    --color-accent:      #1A2D44;     /* Border / divider */
+    --color-accent-soft: #0F1E30;     /* Subtle fill */
+
+    /* Highlight Glows */
+    --color-highlight-blue: rgba(0, 212, 255, 0.12);
+    --color-highlight-pink: rgba(124, 58, 237, 0.12);
+
+    /* Glass System */
+    --color-glass:        rgba(8, 20, 40, 0.75);
+    --color-glass-border: rgba(0, 212, 255, 0.12);
+
+    /* Shadows / Glows */
+    --shadow-soft:  0 8px 40px rgba(0, 0, 0, 0.6);
+    --shadow-hover: 0 0 40px rgba(0, 212, 255, 0.18), 0 20px 60px rgba(0,0,0,0.8);
+    --glow-primary: 0 0 20px rgba(0, 212, 255, 0.4);
+    --glow-violet:  0 0 20px rgba(124, 58, 237, 0.4);
+
+    /* ── Light Theme (kept as fallback) ── */
+    --color-bg-light:          #FCFCFC;
+    --color-text-light-theme:  #171717;
+    --color-text-sub-light:    #525252;
+    --color-primary-light:     #7C3AED;
+    --color-secondary-light:   #FAFAFA;
+    --color-accent-light:      #E5E5E5;
+    --color-accent-soft-light: #F5F5F5;
+}
+
+/* Light mode override */
+html.light-mode {
+    --color-bg:          var(--color-bg-light);
+    --color-bg-2:        #F8F8F8;
+    --color-text:        var(--color-text-light-theme);
+    --color-text-light:  var(--color-text-sub-light);
+    --color-primary:     var(--color-primary-light);
+    --color-primary-rgb: 124, 58, 237;
+    --color-secondary:   var(--color-secondary-light);
+    --color-accent:      var(--color-accent-light);
+    --color-accent-soft: var(--color-accent-soft-light);
+    --color-highlight-blue: #EDE9FE;
+    --color-highlight-pink: #FCE7F3;
+    --color-glass:        rgba(255, 255, 255, 0.85);
+    --color-glass-border: rgba(124, 58, 237, 0.15);
+    --shadow-soft:  0 10px 40px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 20px 60px rgba(124, 58, 237, 0.15);
+    --glow-primary: 0 0 20px rgba(124, 58, 237, 0.25);
+}
+
+/* Reset & Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+    scroll-behavior: smooth;
+    font-size: 12.8px; /* 80% scale */
+    background-color: var(--color-bg);
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.75;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    animation: pageEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+@keyframes pageEnter {
+    0%   { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Grid Background Pattern ── */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+html.light-mode body::before {
+    background-image:
+        linear-gradient(rgba(124, 58, 237, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124, 58, 237, 0.04) 1px, transparent 1px);
+}
+
+/* All layout stays above grid */
+body > * { position: relative; z-index: 1; }
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+}
+h1 { font-size: clamp(3rem, 6vw, 5rem); font-weight: 800; }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: 1.5rem; font-weight: 700; }
+a  { text-decoration: none; color: inherit; transition: color 0.3s ease; font-weight: 500; }
+p  { color: var(--color-text-light); letter-spacing: 0.01em; }
+.text-lead { font-size: 1.15rem; font-weight: 400; max-width: 600px; line-height: 1.8; }
+
+/* Highlight text (gradient) */
+.text-gradient {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-green) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Animations Basics */
+.fade-up   { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.fade-up.visible { opacity: 1; transform: translateY(0); transition-delay: 0s !important; }
+.fade-up:not(.visible).stagger-1 { transition-delay: 0.1s; }
+.fade-up:not(.visible).stagger-2 { transition-delay: 0.2s; }
+.fade-up:not(.visible).stagger-3 { transition-delay: 0.3s; }
+.fade-up:not(.visible).stagger-4 { transition-delay: 0.4s; }
+.fade-up:not(.visible).stagger-5 { transition-delay: 0.5s; }
+.fade-up:not(.visible).stagger-6 { transition-delay: 0.6s; }
+.fade-up:not(.visible).stagger-7 { transition-delay: 0.7s; }

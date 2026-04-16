@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <script>if(localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark-mode');</script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Lê Xuân Sinh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/styles/main.css">
+    <style>
+        .article-content h2 { margin-top: 3rem; margin-bottom: 1.5rem; font-size: 2rem; color: var(--color-heading); border-bottom: 1px solid var(--color-glass-border); padding-bottom: 0.5rem; }
+        .article-content p { margin-bottom: 1.5rem; color: var(--color-text); line-height: 1.8; }
+        .article-content ul { padding-left: 2rem; margin-bottom: 2rem; }
+        .article-content li { margin-bottom: 0.8rem; line-height: 1.6; }
+        .detail-hero-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem auto;
+            border: 1px solid var(--color-glass-border);
+        }
+        .detail-hero-icon i {
+            font-size: 4rem;
+            color: var(--color-primary);
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="pt-navbar container">
+        <article class="fade-up" id="product-detail-container">
+            <!-- Xử lý qua page-init.js -->
+            <div style="text-align: center; padding: 5rem 0;">
+                <i class="ph-bold ph-spinner" style="font-size: 2rem; animation: spin 1s linear infinite;"></i>
+                <p style="margin-top: 1rem;">Loading product details...</p>
+            </div>
+            <style>@keyframes spin { 100% { transform: rotate(360deg); } }</style>
+        </article>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="/data/site.js"></script>
+    <script src="/data/translations/vi.js"></script>
+    <script src="/data/translations/en.js"></script>
+    <script src="/scripts/utils.js"></script>
+    <script src="/scripts/i18n.js"></script>
+    <script src="/scripts/components.js"></script>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/page-init.js"></script>
+</body>
+</html>

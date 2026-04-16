@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <script>if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark-mode');</script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Lê Xuân Sinh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/styles/main.css">
+    <style>
+        .contact-box {
+            background: var(--color-glass);
+            padding: 4rem;
+            border-radius: 30px;
+            border: 1px solid var(--color-glass-border);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .contact-info-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .contact-info-list li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info-list i {
+            font-size: 1.8rem;
+            color: var(--color-primary);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-gradient-blur pink"></div>
+    <div id="header-placeholder"></div>
+
+    <main class="pt-navbar container">
+        <section class="section-padding fade-up">
+            <div class="contact-box">
+                <div class="contact-grid">
+                    <!-- Thông tin liên hệ -->
+                    <div>
+                        <h1 style="font-size: 3.5rem; margin-bottom: 1rem;" data-i18n="contact.title">Liên hệ & kết nối</h1>
+                        <p class="text-lead" style="margin-bottom: 3rem;" data-i18n="contact.desc">Nếu bạn muốn trao đổi công việc, hợp tác hoặc mua sản phẩm, hãy liên hệ với tôi qua các kênh sau.</p>
+
+                        <ul class="contact-info-list" style="margin-bottom: 3rem;">
+                            <li><i class="ph ph-user"></i> <strong><span data-i18n="contact.info_name_label">Họ và tên</span>:</strong> <span data-i18n="contact.info_name">Lê Xuân Sinh</span></li>
+                            <li><i class="ph ph-phone"></i> <strong><span data-i18n="contact.info_phone_label">Số điện thoại</span>:</strong> <span style="font-weight:700; color:var(--color-primary);" data-i18n="contact.info_phone">0973432518</span></li>
+                            <li><i class="ph ph-chat-circle-text"></i> <strong><span data-i18n="contact.info_zalo_label">Zalo</span>:</strong> <span style="font-weight:700; color:var(--color-primary);" data-i18n="contact.info_zalo">0973432518</span></li>
+                            <li><i class="ph ph-telegram-logo"></i> <strong><span data-i18n="contact.info_tele_label">Telegram</span>:</strong> <span style="color:var(--color-primary);" data-i18n="contact.info_tele">@sinhle3008</span></li>
+                            <li><i class="ph ph-robot"></i> <strong><span data-i18n="contact.info_bot_label">Bot mua hàng</span>:</strong> <span style="color:var(--color-green);" data-i18n="contact.info_bot">@sinhleshop_bot</span></li>
+                            <li><i class="ph ph-facebook-logo"></i> <strong><span data-i18n="contact.info_fb_label">Facebook</span>:</strong> <a href="https://www.facebook.com/sinhledev" target="_blank" rel="noopener noreferrer" style="color:var(--color-primary);">facebook.com/sinhledev</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Các nút hành động nhanh (Action Buttons) -->
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem; justify-content: center;">
+                        <a href="tel:0973432518" class="btn btn-primary" style="padding: 1.2rem; font-size: 1.1rem; border-radius: 16px; justify-content: flex-start;">
+                            <i class="ph ph-phone-call" style="font-size: 1.5rem;"></i> <span data-i18n="contact.btn_call">Gọi Ngay</span>
+                        </a>
+                        
+                        <a href="https://zalo.me/0973432518" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 1.2rem; font-size: 1.1rem; border-radius: 16px; justify-content: flex-start; --color-primary: #0088FF; --color-primary-rgb: 0, 136, 255; color: var(--color-primary); border-color: rgba(var(--color-primary-rgb), 0.4);">
+                            <i class="ph ph-chat-circle-text" style="font-size: 1.5rem;"></i> <span data-i18n="contact.btn_zalo">Trao Đổi qua Zalo</span>
+                        </a>
+
+                        <a href="https://t.me/sinhle3008" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 1.2rem; font-size: 1.1rem; border-radius: 16px; justify-content: flex-start; --color-primary: #229ED9; --color-primary-rgb: 34, 158, 217; color: var(--color-primary); border-color: rgba(var(--color-primary-rgb), 0.4);">
+                            <i class="ph ph-telegram-logo" style="font-size: 1.5rem;"></i> <span data-i18n="contact.btn_tele">Chat qua Telegram</span>
+                        </a>
+
+                        <a href="https://t.me/sinhleshop_bot" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: linear-gradient(135deg, var(--color-green) 0%, #009966 100%); color: #000; box-shadow: 0 0 20px rgba(var(--color-green-rgb), 0.35); padding: 1.2rem; font-size: 1.1rem; border-radius: 16px; justify-content: flex-start;">
+                            <i class="ph ph-robot" style="font-size: 1.5rem;"></i> <span data-i18n="contact.btn_bot">Mở Bot Mua Hàng</span>
+                        </a>
+
+                        <a href="https://www.facebook.com/sinhledev" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 1.2rem; font-size: 1.1rem; border-radius: 16px; justify-content: flex-start; --color-primary: #1877F2; --color-primary-rgb: 24, 119, 242; color: var(--color-primary); border-color: rgba(var(--color-primary-rgb), 0.4);">
+                            <i class="ph ph-facebook-logo" style="font-size: 1.5rem;"></i> <span data-i18n="contact.btn_fb">Ghé Thăm Facebook</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <div id="footer-placeholder"></div>
+
+    <script src="/data/site.js"></script>
+    <script src="/data/translations/vi.js"></script>
+    <script src="/data/translations/en.js"></script>
+    <script src="/scripts/utils.js"></script>
+    <script src="/scripts/i18n.js"></script>
+    <script src="/scripts/components.js"></script>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/page-init.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <script>if(localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark-mode');</script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand & Identity | Eutek</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/styles/main.css">
+    <style>
+        .brand-hero { background: var(--color-primary); color: var(--color-bg); border-radius: 40px; padding: 6rem 3rem; text-align: center; margin-bottom: 4rem; position: relative; overflow: hidden; }
+        .brand-hero h1 { color: var(--color-bg); }
+        .brand-hero p { color: var(--color-bg); opacity: 0.8; }
+        .brand-ring { position: absolute; border: 1px solid var(--color-bg); opacity: 0.1; border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; }
+        .brand-ring-1 { width: 300px; height: 300px; }
+        .brand-ring-2 { width: 600px; height: 600px; }
+        .brand-ring-3 { width: 1000px; height: 1000px; }
+        
+        .brand-values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 5rem; }
+        .value-card { border-top: 2px solid var(--color-primary); padding-top: 1.5rem; }
+        @media (max-width: 768px) { .brand-values { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="pt-navbar container">
+        <section class="fade-up">
+            <div class="brand-hero">
+                <div class="brand-ring brand-ring-1"></div>
+                <div class="brand-ring brand-ring-2"></div>
+                <span class="tag" style="background: var(--color-bg); font-weight: 600; color: var(--color-primary); margin-bottom: 2rem; border: none;" data-i18n="brand.hero_tag">Trực Nguồn Kệ Tập Đoàn Minh Hoàng Smart City</span>
+                <h1 style="font-size: clamp(3rem, 6vw, 4.5rem); margin-bottom: 1.5rem;" data-i18n="brand.title">Sự Dung Hợp Từ Cái Tên Eutek</h1>
+                <p class="text-lead" style="margin: 0 auto; max-width: 700px;" data-i18n="brand.desc">Tái khởi tạo lại không gian hít thở và tương tác hằng ngày bằng hình thái tinh xảo, giản lược mà cực kỳ thấu cảm tới mọi ngóc ngách của căn nhà đồ điện gia dụng. Vì một Eutek sinh ra từ gốc của Minh Hoàng Smart City, cốt lõi là việc giao điểm hóa tinh hoa công nghệ cao lẫn lối hưởng thụ nhân sinh.</p>
+            </div>
+        </section>
+
+        <section class="section-padding fade-up">
+            <div class="grid-2" style="align-items: center;">
+                <div>
+                    <h2 style="margin-bottom: 1.5rem;" data-i18n="brand.pos_title">Định Khung Hệ Thống Phân Khúc Chiến Lược Marketing Hiện Hành Tại Của Chiếc Máy Này</h2>
+                    <p class="text-lead" style="margin-bottom: 1.5rem;" data-i18n="brand.pos_p1">Người ta cầm Eutek lên không phải vì hãng lắp ráp đồ linh kiện mạnh, người ta chốt đơn Eutek bởi vì nó là đặc ân đặc quyền cho việc 'Nâng Tầm Cuộc Đời'. Nhiệm vụ then chốt sâu thẳm của vị trí tôi ở Minh Hoàng là xử lý đống thông số khuôn tẻ nhạt ra hàng trang những ý miêu tả xúc cảm mạnh mẽ rực lửa chạm ngay trái tim khách, thân thiện hóa khái niệm kĩ sư công nghiệp máy móc với bác nội trợ làm việc nhà.</p>
+                    <p class="text-lead" data-i18n="brand.pos_p2">Do việc định dạng hình tượng là "Kẻ Nằm Vùng Dịch Vụ - Trợ Lý Cốt Lõi Vô Hình", phương hướng truyền hình kể chuyện dứt khoát xóa phần búa chát linh kiện thép ra khỏi video và đánh vào nụ cười rạng rỡ của người mẹ, tâm an thư thả đôn đả vì ta đã đem thời gian về với gia đình chứ không còn là công sức.</p>
+                </div>
+                <div class="glass-card" style="aspect-ratio: 4/3; background: var(--color-accent); border-radius: 30px; display: flex; align-items: center; justify-content: center;">
+                    <i class="ph ph-image-square" style="font-size: 5rem; color: var(--color-text-light);"></i>
+                </div>
+            </div>
+        </section>
+
+        <section class="fade-up">
+            <h2 style="margin-bottom: 3rem; text-align: center;" data-i18n="brand.core_title">Các Hệ Lõi Chuẩn Giá Trị Bấu Víu</h2>
+            <div class="brand-values">
+                <div class="value-card">
+                    <h3 style="margin-bottom: 1rem;" data-i18n="brand.core_1_title">Sự Đổi Mới Hầu Như Tiên Phong</h3>
+                    <p data-i18n="brand.core_1_desc">Tích hợp trọn bộ cấu trúc gen Smart City tiên phong đặt thẳng vào bàn uống nước hay tủ sách gia đình mà không gây cảm thấy xa lạ hay tiếng ồn mệt mỏi.</p>
+                </div>
+                <div class="value-card">
+                    <h3 style="margin-bottom: 1rem;" data-i18n="brand.core_2_title">Tối Cao Của Tính Khắp Chốn Thẩm Mỹ Đẹp</h3>
+                    <p data-i18n="brand.core_2_desc">Ngoại quan mang bản chất của sự trau chuốt tuyệt phẩm, đánh giá trên thang điểm hạng sang, xóa dị biệt thừa thãi rủi ro rớt, và tích cực sự an ủi qua mọi mặt nhãn ấn định quảng báo.</p>
+                </div>
+                <div class="value-card">
+                    <h3 style="margin-bottom: 1rem;" data-i18n="brand.core_3_title">Giao Dịch Dễ Dàng Trực Tiếp Cho Ngay Lúc Phổ Dụng</h3>
+                    <p data-i18n="brand.core_3_desc">Tuyên ngôn rõ ràng, tránh nói xạo lắt léo giúp bất biến đi cảm giác phòng ngự công nghệ khó xài mà bất kỳ một bậc tiền bối lứa tuổi trung niên ông bà nào chăng nữa cũng thấy dễ thương mà mạnh dạn cắm xài liền tức khắc.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section-padding fade-up text-center">
+            <h2 style="margin-bottom: 2rem;" data-i18n="brand.cta_title">Bạn háo hức xem bản kịch hoạch định xuất chiêu truyền giáo trên thị trường chúng tôi làm như thế nào không?</h2>
+            <a href="projects.html" class="btn btn-primary" data-i18n="brand.btn_case">Review Xem Trực Diện Dự Án Nhãn Hiệu Eutek Này</a>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="/data/site.js"></script>
+    <script src="/data/translations/vi.js"></script>
+    <script src="/data/translations/en.js"></script>
+    <script src="/scripts/utils.js"></script>
+    <script src="/scripts/i18n.js"></script>
+    <script src="/scripts/components.js"></script>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/page-init.js"></script>
+</body>
+</html>
+
+

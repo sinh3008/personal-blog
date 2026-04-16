@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <script>if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark-mode');</script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Lê Xuân Sinh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="pt-navbar container">
+        <section class="fade-up" style="margin-bottom: 3rem;">
+            <h1 style="font-size: 4rem; margin-bottom: 1rem;" data-i18n="products.title">Tuyển Tập Dịch Vụ & Biểu Trưng
+            </h1>
+            <p class="text-lead" data-i18n="products.desc">Nơi tôn tạo và tổng quy mọi giá trị cung cấp ấn phẩm file số,
+                tài nguyên đào tạo và sự phục vụ trong hoạt động tư vấn đối ngoại hoặc sản phẩm trực quan vật lý.</p>
+        </section>
+
+        <section class="section-padding fade-up">
+            <div class="filter-tabs" style="justify-content: flex-start;" id="product-filter-tabs">
+                <button class="filter-btn active" data-filter="all" data-i18n="products.filter_all">Tất Cả</button>
+                <button class="filter-btn" data-filter="ai-account" data-i18n="products.filter_ai_account">Tài Khoản
+                    AI</button>
+                <button class="filter-btn" data-filter="video-tool" data-i18n="products.filter_video_tool">Video
+                    Tool</button>
+                <button class="filter-btn" data-filter="google-ai" data-i18n="products.filter_google_ai">Google
+                    AI</button>
+                <button class="filter-btn" data-filter="design" data-i18n="products.filter_design">Design Tool</button>
+            </div>
+
+            <div class="grid-2" id="products-grid"></div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="/data/site.js"></script>
+    <script src="/data/translations/vi.js"></script>
+    <script src="/data/translations/en.js"></script>
+    <script src="/scripts/utils.js"></script>
+    <script src="/scripts/i18n.js"></script>
+    <script src="/scripts/components.js"></script>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/page-init.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,254 @@
+/* ============================================================
+   animations.css — Premium Animation System
+   ============================================================ */
+
+
+
+
+/* ----------------------------------------------------------
+   2. HERO PARALLAX LAYERS
+   ---------------------------------------------------------- */
+.hero-parallax-layer {
+    will-change: transform;
+    transition: transform 0.05s linear;
+}
+
+.parallax-slow  { transform: translateY(calc(var(--scroll-y) * 0.3px)); }
+.parallax-med   { transform: translateY(calc(var(--scroll-y) * 0.15px)); }
+
+
+/* ----------------------------------------------------------
+   3. BUTTON SHINE EFFECT
+   ---------------------------------------------------------- */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -75%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0) 30%,
+        rgba(255,255,255,0.35) 50%,
+        rgba(255,255,255,0) 70%
+    );
+    transform: skewX(-20deg);
+    animation: btnShine 3.5s ease-in-out infinite;
+}
+
+@keyframes btnShine {
+    0%   { left: -75%; opacity: 0; }
+    20%  { opacity: 1; }
+    50%  { left: 130%; opacity: 0.8; }
+    51%  { opacity: 0; }
+    100% { left: 130%; opacity: 0; }
+}
+
+
+/* ----------------------------------------------------------
+   4. TIMELINE DRAW + RIPPLE DOTS
+   ---------------------------------------------------------- */
+.timeline::before {
+    /* Override — animated draw on scroll */
+    background: linear-gradient(to bottom, var(--color-primary) var(--timeline-progress, 0%), var(--color-accent) var(--timeline-progress, 0%));
+    transition: background 0.1s linear;
+}
+
+.timeline-dot {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.timeline-dot::before,
+.timeline-dot::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+    opacity: 0;
+    animation: timelineRipple 2.8s ease-out infinite;
+}
+
+.timeline-dot::after {
+    animation-delay: 1.4s;
+}
+
+@keyframes timelineRipple {
+    0%   { transform: scale(1);   opacity: 0.6; }
+    100% { transform: scale(2.4); opacity: 0; }
+}
+
+.timeline-item.visible .timeline-dot {
+    transform: scale(1.2);
+}
+
+
+/* ----------------------------------------------------------
+   5. CARD TILT + INNER GLOW
+   ---------------------------------------------------------- */
+.glass-card,
+.portfolio-card {
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+/* Glow halo behind glass-card on hover */
+.glass-card {
+    position: relative;
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 24px;
+    background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(120,180,255,0.18), transparent 65%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.glass-card:hover::before {
+    opacity: 1;
+}
+
+/* All content inside glass-card sits above glow layer */
+.glass-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Portfolio card image zoom + brightness */
+.portfolio-card .portfolio-img img {
+    filter: brightness(0.96);
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+}
+
+.portfolio-card:hover .portfolio-img img {
+    transform: scale(1.07);
+    filter: brightness(1.04);
+}
+
+
+/* ----------------------------------------------------------
+   6. NAVBAR SCROLL SHRINK
+   ---------------------------------------------------------- */
+.navbar.scrolled {
+    padding: 0;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.5),
+                0 0 20px rgba(0, 212, 255, 0.06);
+}
+
+.navbar.scrolled .nav-container {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+
+/* ----------------------------------------------------------
+   7. LINK ARROW HOVER
+   ---------------------------------------------------------- */
+.link-arrow i {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.link-arrow:hover i {
+    transform: translateX(6px);
+}
+
+
+/* ----------------------------------------------------------
+   8. FADE-UP: more stagger slots
+   ---------------------------------------------------------- */
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+
+/* Fade-left & fade-right variants */
+.fade-left  { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.fade-right { opacity: 0; transform: translateX(40px);  transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.fade-left.visible  { opacity: 1; transform: translateX(0); }
+.fade-right.visible { opacity: 1; transform: translateX(0); }
+
+
+/* ----------------------------------------------------------
+   9. LOGO GLITCH HOVER  (fun touch on navbar)
+   ---------------------------------------------------------- */
+.logo {
+    position: relative;
+    display: inline-block;
+}
+
+.logo::before,
+.logo::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.logo::before {
+    color: #6EE7B7;
+    clip-path: polygon(0 20%, 100% 20%, 100% 40%, 0 40%);
+    transform: translate(-3px, 0);
+    transition: opacity 0.05s;
+}
+
+.logo::after {
+    color: #F9A8D4;
+    clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%);
+    transform: translate(3px, 0);
+    transition: opacity 0.05s;
+}
+
+.logo:hover::before,
+.logo:hover::after {
+    animation: logoGlitch 0.4s steps(2, end) forwards;
+}
+
+@keyframes logoGlitch {
+    0%, 100% { opacity: 0; transform: translate(0); }
+    20%       { opacity: 1; transform: translate(-4px, 1px); }
+    40%       { opacity: 0.7; transform: translate(4px, -1px); }
+    60%       { opacity: 1; transform: translate(-2px, 2px); }
+    80%       { opacity: 0; transform: translate(0); }
+}
+
+
+/* ----------------------------------------------------------
+   10. SCROLL INDICATOR  (hero page — bouncing arrow)
+   ---------------------------------------------------------- */
+.scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    opacity: 0.45;
+    animation: scrollBounce 2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.scroll-indicator span {
+    display: block;
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--color-primary), transparent);
+}
+
+@keyframes scrollBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.45; }
+    50%       { transform: translateX(-50%) translateY(8px); opacity: 0.8; }
+}

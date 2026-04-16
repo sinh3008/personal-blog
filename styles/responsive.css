@@ -1,0 +1,18 @@
+/* responsive.css */
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+    .grid-2 { grid-template-columns: 1fr; gap: 3rem; }
+    .about-hero { grid-template-columns: 1fr; text-align: center; }
+    .about-img { aspect-ratio: 16/9; margin-bottom: 2rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    h1 { font-size: 3.5rem; }
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: block; }
+    .nav-actions .btn { display: none; }
+    .timeline::before { left: 16px; }
+    .timeline-item { padding-left: 50px; }
+    .timeline-dot { left: 7px; width: 16px; height: 16px; }
+}

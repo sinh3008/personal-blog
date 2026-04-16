@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <script>if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark-mode');</script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Editorial Insights</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="pt-navbar container">
+        <section class="fade-up" style="margin-bottom: 3rem;">
+            <h1 style="font-size: 4rem; margin-bottom: 1rem;" data-i18n="blog.title">Trang Báo Viết Dài Editorial.</h1>
+            <p class="text-lead" data-i18n="blog.desc">Nơi tập kích kho tàng kiến trúc váng mỡ thực thụ tri thức trong
+                làng Marketing kỹ thuật cao, rải tiền đẩy quảng cáo cực thông minh không mất sức o ép, và cả con mắt
+                định giá thiết kế hệ logo thẩm mỹ đồ họa.</p>
+        </section>
+
+        <!-- Featured Post -->
+        <section class="editorial-hero fade-up stagger-1">
+            <div class="blog-card-img-wrapper">
+                <img src="/assets/images/blog.png" alt="Featured Post" class="editorial-featured-img">
+            </div>
+            <div class="editorial-featured-content">
+                <div class="article-meta">
+                    <span class="tag" data-i18n="blog.hero_tag">Góc Nhìn Thuật Chiến</span>
+                    <span data-i18n="blog.hero_date">Niên Khoá Tháng 10, Ngày 14, Tại Thời Điểm Cuối Năm Của 2026</span>
+                </div>
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;" data-i18n="blog.hero_title">Lời Chỉ Đích Tội Lỗi
+                    Tới Việc Bơm Quảng Cáo Kiểu 'Nuốt Doanh Số' Chỉ Dẫn Sự Phá Sản Nếu Khuyết Nền Gạch Thương Hiệu.</h2>
+                <p class="text-lead" style="margin-bottom: 2rem;" data-i18n="blog.hero_desc">Cực chuyên sâu đào qua mặt
+                    nổi xuống đáy cái bể cách tôi giữ vững bình minh tâm lặng trước những cuộc gọi vội chốt giá chênh
+                    lệch tốn phí lead mà không mất đi vầng sáng mặt trăng đẳng cấp hoàng kim sang giá của doanh nghiệp
+                    mộc nhãn ở tương lai.</p>
+                <a href="#" class="link-arrow"><span data-i18n="blog.read_full">Xin Mời Nháy Vào Để Phá Ánh Cửa Trang
+                        Web Mà Đọc...</span> <i class="ph ph-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section class="section-padding fade-up">
+            <div class="filter-tabs" style="justify-content: flex-start; margin-bottom: 3rem;">
+                <button class="filter-btn active" data-i18n="blog.filter_all">Tất Cả Mọi Nội Trữ Tạp Chí Bài
+                    Đăng</button>
+                <button class="filter-btn" data-i18n="blog.filter_fb">Hoạt Động Khối Ngành Quản Trị Trình Chạy Ads Ở
+                    Meta FB</button>
+                <button class="filter-btn" data-i18n="blog.filter_content">Lập Bản Đồ Kĩ Năng Khâu Trích Xuất Content
+                    Phương Tiện Đẩy Clip</button>
+                <button class="filter-btn" data-i18n="blog.filter_ai">Công Khí Động Học Lực Nhờ Việc Dùng AI Áp Trúng
+                    Marketing Chuyên Việc</button>
+            </div>
+
+            <div class="blog-grid" id="blog-grid"></div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="/data/site.js"></script>
+    <script src="/data/translations/vi.js"></script>
+    <script src="/data/translations/en.js"></script>
+    <script src="/scripts/utils.js"></script>
+    <script src="/scripts/i18n.js"></script>
+    <script src="/scripts/components.js"></script>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/page-init.js"></script>
+</body>
+
+</html>
