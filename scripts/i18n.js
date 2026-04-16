@@ -1,9 +1,9 @@
-// scripts/i18n.js
+﻿// scripts/i18n.js
 const I18n = {
-    currentLang: 'vi',
+    currentLang: 'en',
     
     init: function() {
-        this.currentLang = localStorage.getItem('lang') || 'vi';
+        this.currentLang = localStorage.getItem('lang') || 'en';
         document.documentElement.lang = this.currentLang;
         this.applyTranslations(this.currentLang);
         this.updateSwitcherUI();

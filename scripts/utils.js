@@ -1,11 +1,11 @@
-// scripts/utils.js
+﻿// scripts/utils.js
 const Utils = {
     initTheme: function() {
         const themeToggle = document.getElementById('themeToggle');
         if (!themeToggle) return;
 
-        // Dark is the DEFAULT — light-mode is the override
-        let isLight = localStorage.getItem('theme') === 'light';
+        // Light is the DEFAULT — dark-mode is the override
+        let isLight = localStorage.getItem('theme') !== 'dark';
 
         const applyTheme = (light) => {
             if (light) {
@@ -54,15 +54,7 @@ const Utils = {
         const navLinks = document.querySelector('.nav-links');
         if (hamburger && navLinks) {
             hamburger.addEventListener('click', () => {
-                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.background = 'var(--color-glass)';
-                navLinks.style.padding = '1rem 0';
-                navLinks.style.borderBottom = '1px solid var(--color-glass-border)';
+                navLinks.classList.toggle('active');
             });
         }
     },

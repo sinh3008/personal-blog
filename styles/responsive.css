@@ -9,7 +9,32 @@
 }
 
 @media (max-width: 768px) {
-    .nav-links { display: none; }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(5, 10, 20, 0.98);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        z-index: -1;
+        padding-top: 100px;
+        padding-bottom: 2rem;
+        text-align: center;
+        gap: 2.5rem;
+        overflow-y: auto;
+    }
+    html.light-mode .nav-links {
+        background: rgba(250, 250, 250, 0.98);
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links a { font-size: 1.25rem; }
+    
     .hamburger { display: block; }
     .nav-actions .btn { display: none; }
     .timeline::before { left: 16px; }
