@@ -16,8 +16,8 @@ window.SiteData = {
         title_en: "Digital Marketer & Brand Specialist",
         born: 2001,
         location: "Hà Nội / Hải Dương",
-        email: "xuansinh@example.com",         // ← đổi email thật của bạn
-        phone: "",                              // ← thêm số điện thoại nếu muốn
+        email: "sinhle.dev@gmail.com",         // ← đổi email thật của bạn
+        phone: "0973432518",                              // ← thêm số điện thoại nếu muốn
         cvLink: "#",                             // ← link Google Drive CV
         socials: {
             facebook: "https://www.facebook.com/sinhledev",

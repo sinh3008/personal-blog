@@ -219,4 +219,5 @@ document.addEventListener('AppReady', () => {
     if (window.I18n) window.I18n.applyTranslations(window.I18n.currentLang);
     if (window.Utils) window.Utils.initScrollReveal();
     if (window.Utils) window.Utils.initCardTilt();
+    if (window.Utils) window.Utils.initCounters();
 });

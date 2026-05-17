@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,127 +6,639 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="/assets/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lê Xuân Sinh | Digital Marketer</title>
+    <title data-i18n="home_v2.page_title">Lê Xuân Sinh | AI Marketing & Automation Specialist</title>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="/styles/main.css">
+
+    <style>
+        /* CSS bổ sung riêng cho các thành phần đặc biệt của index2 (Marquee, Dashboard UI) */
+        .marquee-container {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            padding: 3rem 0;
+            border-top: 1px solid var(--color-glass-border);
+            border-bottom: 1px solid var(--color-glass-border);
+            background: rgba(255, 255, 255, 0.01);
+        }
+
+        .marquee-content {
+            display: flex;
+            gap: 2rem;
+            animation: scroll-left 25s linear infinite;
+            min-width: 200%;
+        }
+
+        .marquee-item {
+            padding: 0.6rem 1.5rem;
+            background: var(--color-glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--color-glass-border);
+            border-radius: 50px;
+            white-space: nowrap;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: all 0.3s ease;
+        }
+
+        .marquee-item:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-50% - 1rem));
+            }
+        }
+
+        /* Hero Right Side Custom */
+        .hero-split {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .hero-split {
+                grid-template-columns: 1.2fr 1fr;
+            }
+        }
+
+        .ai-dashboard-mock {
+            position: relative;
+            height: 500px;
+            display: none;
+        }
+
+        @media (min-width: 992px) {
+            .ai-dashboard-mock {
+                display: block;
+            }
+        }
+
+        .mock-card {
+            position: absolute;
+            background: var(--color-glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--color-glass-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .mock-main {
+            top: 10%;
+            right: 0;
+            width: 320px;
+            animation-delay: 0s;
+        }
+
+        .mock-chat {
+            bottom: 10%;
+            left: 0;
+            width: 260px;
+            animation-delay: 2s;
+        }
+
+        .mock-chart {
+            top: 0;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 78%;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+        }
+
+        /* Glass Card Hover specific for What I Build */
+        .ai-feature-card {
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+        }
+
+        .ai-feature-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--color-primary);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
+        }
+
+        .ai-feature-card ul li {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            opacity: 0.8;
+            padding: 0.3rem 0;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
 </head>
 
 <body>
     <div class="bg-gradient-blur"></div>
     <div class="bg-gradient-blur pink"></div>
     <div class="bg-gradient-blur green"></div>
+
+    <!-- HEADER -->
     <div id="header-placeholder"></div>
 
-    <!-- test -->
-
     <main class="pt-navbar container">
-        <section class="hero-minimal fade-up">
-            <div class="hero-minimal-content">
-                <span class="tag" data-i18n="home.hero_tag">Chuyên Viên Marketing & Xây Dựng Thương Hiệu</span>
-                <h1 data-i18n="home.hero_title">Xây Dựng Thương Hiệu &<br>Trải Nghiệm Tương Tác.</h1>
-                <p class="text-lead" data-i18n="home.hero_desc">Xin chào, tôi là Lê Xuân Sinh. Tôi chuyên về chiến lược
-                    tiếp thị, Quảng cáo Facebook, và thực thi các chiến dịch sáng tạo cho các thương hiệu tăng trưởng
-                    nhanh trong lĩnh vực thời trang, gia dụng, và nhà thông minh.</p>
-                <div class="hero-actions">
-                    <a href="/pages/projects.html" class="btn btn-primary" data-i18n="home.btn_work">Xem dự án</a>
-                    <a href="/pages/about.html" class="btn btn-secondary" data-i18n="home.btn_journey">Hành trình của
-                        tôi</a>
+        <!-- HERO SECTION -->
+        <section class="hero-minimal fade-up"
+            style="min-height: 90vh; display: flex; align-items: center; padding-top: 2rem;">
+            <div class="hero-split w-100">
+                <!-- Left Content -->
+                <div class="hero-minimal-content" style="text-align: left; margin: 0; max-width: 100%;">
+                    <span class="tag">
+                        <i class="ph-fill ph-robot" style="color: var(--color-primary);"></i> <span
+                            data-i18n="home_v2.hero_tag">AI MARKETING & AUTOMATION</span>
+                    </span>
+                    <h1 style="font-size: clamp(2.5rem, 4.5vw, 4rem); line-height: 1.15; margin-bottom: 1.5rem;"
+                        data-i18n="home_v2.hero_title">
+                        Build <span class="text-gradient">AI-Powered</span><br>
+                        Growth Systems For Modern Brands.
+                    </h1>
+                    <p class="text-lead" style="margin-bottom: 2.5rem; max-width: 500px;" data-i18n="home_v2.hero_desc">
+                        Tôi giúp thương hiệu tăng trưởng bằng AI Automation, Performance Marketing và trải nghiệm số
+                        hiện đại. Biến sự phức tạp thành hệ thống tinh gọn.
+                    </p>
+                    <div class="hero-actions" style="justify-content: flex-start; margin-bottom: 3rem;">
+                        <a href="#projects" class="btn btn-primary"><span data-i18n="home_v2.btn_explore">Explore Case
+                                Studies</span> <i class="ph ph-arrow-right"></i></a>
+                        <a href="#ai-systems" class="btn btn-secondary"><i class="ph ph-cpu"></i> <span
+                                data-i18n="home_v2.btn_systems">View AI Systems</span></a>
+                    </div>
+
+                    <div
+                        style="display: flex; gap: 3rem; border-top: 1px solid var(--color-glass-border); padding-top: 2rem;">
+                        <div><strong style="font-size: 1.8rem; display: block; line-height: 1;"><span
+                                    class="animate-counter" data-target="50">0</span>+</strong><span
+                                style="font-size: 0.85rem; opacity: 0.7; text-transform: uppercase; letter-spacing: 1px;"
+                                data-i18n="home_v2.stat_campaigns">Campaigns</span>
+                        </div>
+                        <div><strong style="font-size: 1.8rem; display: block; line-height: 1;"><span
+                                    class="animate-counter" data-target="20">0</span>M+</strong><span
+                                style="font-size: 0.85rem; opacity: 0.7; text-transform: uppercase; letter-spacing: 1px;"
+                                data-i18n="home_v2.stat_reach">Reach</span>
+                        </div>
+                        <div><strong style="font-size: 1.8rem; display: block; line-height: 1;">AI</strong><span
+                                style="font-size: 0.85rem; opacity: 0.7; text-transform: uppercase; letter-spacing: 1px;"
+                                data-i18n="home_v2.stat_workflows">Workflows</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content (Floating UI) -->
+                <div class="ai-dashboard-mock fade-left stagger-1">
+                    <div class="mock-card mock-main">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                <div
+                                    style="width: 40px; height: 40px; border-radius: 50%; background: rgba(139,92,246,0.2); display: flex; align-items: center; justify-content: center;">
+                                    <i class="ph ph-brain" style="font-size: 1.5rem; color: var(--color-primary);"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 600; font-size: 0.95rem;"
+                                        data-i18n="home_v2.dashboard_title">AI Growth Engine</div>
+                                    <div style="font-size: 0.75rem; color: #4ade80;"
+                                        data-i18n="home_v2.dashboard_status">System Active</div>
+                                </div>
+                            </div>
+                            <span class="tag"
+                                style="padding: 4px 8px; font-size: 0.7rem; margin: 0; background: rgba(255,255,255,0.1);">v2.4</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div
+                                style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                                <div style="font-size: 0.75rem; opacity: 0.7; margin-bottom: 0.2rem;"
+                                    data-i18n="home_v2.dashboard_conv">Conversion</div>
+                                <div style="font-size: 1.4rem; font-weight: bold; color: #fff;">+142%</div>
+                            </div>
+                            <div
+                                style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                                <div style="font-size: 0.75rem; opacity: 0.7; margin-bottom: 0.2rem;"
+                                    data-i18n="home_v2.dashboard_cpa">CPA Reduced</div>
+                                <div style="font-size: 1.4rem; font-weight: bold; color: #4ade80;">-34%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mock-card mock-chat">
+                        <div style="display: flex; gap: 0.8rem; margin-bottom: 1rem;">
+                            <div
+                                style="width: 28px; height: 28px; border-radius: 50%; background: var(--color-accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="ph-fill ph-robot" style="font-size: 1rem; color: #fff;"></i>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 0.6rem 1rem; border-radius: 12px 12px 12px 0; font-size: 0.85rem;"
+                                data-i18n="home_v2.chat_bot">
+                                Lead qualified! Forwarding to CRM...</div>
+                        </div>
+                        <div style="display: flex; justify-content: flex-end;">
+                            <div style="background: var(--color-primary); padding: 0.6rem 1rem; border-radius: 12px 12px 0 12px; font-size: 0.85rem; color: #fff; box-shadow: 0 4px 15px rgba(139,92,246,0.4);"
+                                data-i18n="home_v2.chat_user">
+                                Initiate Phase 2.</div>
+                        </div>
+                    </div>
+
+                    <div class="mock-card mock-chart" style="padding: 0;">
+                        <i class="ph ph-chart-line-up" style="font-size: 3rem; color: var(--color-accent);"></i>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Preview -->
-        <section class="section-padding fade-up">
-            <div class="section-header">
-                <h2 data-i18n="home.journey_title">Hành Trình Đến Nay</h2>
-                <p data-i18n="home.journey_desc">Tạo động lực tăng trưởng trên nhiều lĩnh vực cốt lõi.</p>
-            </div>
 
-            <div class="timeline">
-                <div class="timeline-item fade-up">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2026 - Present</span>
-                        <h3>Minh Hoàng Smart City</h3>
-                        <h4 data-i18n="home.mh_role">Chiến Lược Marketing & Nhận Diện Thương Hiệu</h4>
-                        <p data-i18n="home.mh_desc">Dẫn dắt các chiến lược tiếp thị, quy trình hỗ trợ bởi AI và các
-                            chiến dịch quảng bá toàn quốc cho các sản phẩm nội thất và gia dụng cao cấp.</p>
-                        <a href="/pages/brand.html" class="link-arrow" style="margin-top: 1rem;"><span
-                                data-i18n="home.mh_link">Khám Phá Câu Chuyện Thương Hiệu</span> <i
-                                class="ph ph-arrow-right"></i></a>
-                    </div>
-                </div>
 
-                <div class="timeline-item fade-up">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2024 - 2026</span>
-                        <h3>D.T / Functional Foods</h3>
-                        <h4 data-i18n="home.dt_role">Chuyên Viên Digital Marketing</h4>
-                        <p data-i18n="home.dt_desc">Quản lý Quảng cáo Facebook, phân tích sâu insight khách hàng hằng
-                            ngày, điểu hướng nội dung và theo dõi hiệu suất quảng cáo.</p>
-                    </div>
+        <section class="about-hero fade-up">
+            <div>
+                <h1 style="font-size: 3.5rem; margin-bottom: 2rem;" data-i18n="about.title">Xin chào, tôi là Sinh.</h1>
+                <p class="text-lead" style="margin-bottom: 1.5rem;" data-i18n="about.p1">Tôi là một Digital Marketer và
+                    Chuyên gia Thương hiệu sinh năm 2001, hiện làm việc tại Hà Nội / Hải Dương.</p>
+                <p class="text-lead" style="margin-bottom: 1.5rem;" data-i18n="about.p2">Trong vài năm qua, tôi đã xây
+                    dựng nền tảng sự nghiệp tạo ra kết quả trong các ngành công nghiệp cạnh tranh: từ thời trang chuyển
+                    động nhanh, thực phẩm đa dạng, đến thiết bị gia dụng cao cấp.</p>
+                <p class="text-lead" style="margin-bottom: 3rem;" data-i18n="about.p3">Tham vọng dài hạn của tôi?
+                    <strong style="color: var(--color-text);">Trở thành một vị Giám Đốc Marketing tầm nhìn</strong>
+                    người kết nối những sản phẩm tuyệt vời với đúng người thông qua câu chuyện thương hiệu cảm xúc và
+                    hiệu suất dựa trên dữ liệu.
+                </p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="/pages/experience.html" class="btn btn-secondary" data-i18n="about.btn_exp">Kinh Nghiệm Của
+                        Tôi</a>
+                    <a href="/pages/contact.html" class="btn btn-primary" data-i18n="about.btn_touch">Mời Kết Nối</a>
                 </div>
             </div>
-
-            <div class="text-center" style="margin-top: 3rem;">
-                <a href="/pages/experience.html" class="btn btn-secondary" data-i18n="home.btn_full_timeline">Xem Toàn
-                    Bộ Dòng Thời Gian</a>
+            <div class="about-img stagger-1">
+                <img src="/assets/images/profile.png" alt="Lê Xuân Sinh">
             </div>
         </section>
 
-        <!-- Projects Preview -->
+        <!-- Core Mindset -->
         <section class="section-padding fade-up">
-            <div class="section-header">
-                <h2 data-i18n="home.work_title">Dự Án Tiêu Biểu</h2>
-                <p data-i18n="home.work_desc">Các case study về chiến dịch quảng cáo, xây dựng thương hiệu và đo lường
-                    hiệu suất.</p>
+            <div class="grid-2">
+                <div>
+                    <h2 style="margin-bottom: 1rem;" data-i18n="about.mindset_title">Tư Duy Làm Việc</h2>
+                    <p class="text-lead" data-i18n="about.mindset_desc">Triết lý và cách tiếp cận công việc cốt lõi của
+                        tôi.</p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 3rem;">
+                    <div class="fade-up stagger-1">
+                        <h3 style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;"><i
+                                class="ph ph-trend-up" style="color: var(--color-primary); font-size: 1.8rem;"></i>
+                            <span data-i18n="about.mindset_1_title">Dữ Liệu & Cảm Xúc</span>
+                        </h3>
+                        <p data-i18n="about.mindset_1_desc">Marketing tốt là bài toán toán học, nhưng marketing xuất sắc
+                            là bài toán cảm xúc. Tôi dùng dữ liệu để chọn khán giả, và kể chuyện để thu phục họ.</p>
+                    </div>
+                    <div class="fade-up stagger-2">
+                        <h3 style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;"><i
+                                class="ph ph-robot" style="color: var(--color-primary); font-size: 1.8rem;"></i> <span
+                                data-i18n="about.mindset_2_title">Thực Thi Tối Ưu Bằng AI</span></h3>
+                        <p data-i18n="about.mindset_2_desc">Tôi chủ động áp dụng các quy trình làm việc có sự hỗ trợ của
+                            AI để mở rộng nội dung, tăng tốc lên kế hoạch, và đi trước xu hướng kỷ nguyên số.</p>
+                    </div>
+                    <div class="fade-up stagger-3">
+                        <h3 style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;"><i
+                                class="ph ph-users" style="color: var(--color-primary); font-size: 1.8rem;"></i> <span
+                                data-i18n="about.mindset_3_title">Lãnh Đạo & Đội Nhóm</span></h3>
+                        <p data-i18n="about.mindset_3_desc">Không chiến dịch xuất sắc nào được làm một mình. Tôi ưu tiên
+                            giao tiếp rõ ràng, phân quyền chuẩn xác, và trao quyền tối đa cho đồng đội.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tool Stack -->
+        <section class="section-padding fade-up">
+            <div class="container" style="text-align: center;">
+                <h2 style="margin-bottom: 1rem;" data-i18n="about.skills_title">Bảng Kỹ Năng Kỹ Thuật</h2>
+                <p class="text-lead" style="margin: 0 auto 4rem auto; text-align: center;"
+                    data-i18n="about.skills_desc">Các công cụ và kỹ năng
+                    tôi sử dụng mỗi ngày cần thiết.</p>
+                <div
+                    style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; max-width: 800px; margin: 0 auto;">
+                    <span class="tag" style="font-size: 1.1rem; padding: 0.8rem 1.5rem;" data-i18n="about.skill_1">Quảng
+                        Cáo
+                        Facebook</span>
+                    <span class="tag" style="font-size: 1.1rem; padding: 0.8rem 1.5rem;" data-i18n="about.skill_2">Vận
+                        hành
+                        Photoshop</span>
+                    <span class="tag" style="font-size: 1.1rem; padding: 0.8rem 1.5rem;" data-i18n="about.skill_3">Dựng
+                        Video CapCut</span>
+                    <span class="tag" style="font-size: 1.1rem; padding: 0.8rem 1.5rem;" data-i18n="about.skill_4">Chiến
+                        Lược Digital</span>
+                    <span class="tag" style="font-size: 1.1rem; padding: 0.8rem 1.5rem;" data-i18n="about.skill_5">Lãnh
+                        Đạo
+                        Đội Nhóm</span>
+                    <span class="tag" style="font-size: 1.1rem; padding: 0.8rem 1.5rem;" data-i18n="about.skill_6">Kỹ
+                        Năng
+                        Hợp Tác</span>
+                    <span class="tag" style="font-size: 1.1rem; padding: 0.8rem 1.5rem;"
+                        data-i18n="about.skill_7">Insight
+                        Khách Hàng</span>
+                    <span class="tag" style="font-size: 1.1rem; padding: 0.8rem 1.5rem;" data-i18n="about.skill_8">Kỹ
+                        Năng
+                        Tiền Trạm AI</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- WHAT I BUILD -->
+        <section class="section-padding fade-up" id="ai-systems">
+            <div class="section-header text-center">
+                <h2 data-i18n="home_v2.build_title">What I <span class="text-gradient">Build</span></h2>
+                <p data-i18n="home_v2.build_desc">Hệ thống toàn diện từ thu hút khách hàng đến tự động hóa chăm sóc và
+                    tối ưu tỷ lệ chuyển đổi.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="glass-card ai-feature-card fade-up">
+                    <div
+                        style="width: 60px; height: 60px; background: rgba(139,92,246,0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; border: 1px solid rgba(139,92,246,0.2);">
+                        <i class="ph ph-robot" style="font-size: 2rem; color: var(--color-primary);"></i>
+                    </div>
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1.4rem;" data-i18n="home_v2.card1_title">AI Marketing
+                        Systems</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><i class="ph-fill ph-check-circle" style="color: var(--color-primary);"></i> <span
+                                data-i18n="home_v2.card1_li1">AI Chatbots</span>
+                        </li>
+                        <li><i class="ph-fill ph-check-circle" style="color: var(--color-primary);"></i> <span
+                                data-i18n="home_v2.card1_li2">Automation
+                                Workflows</span></li>
+                        <li><i class="ph-fill ph-check-circle" style="color: var(--color-primary);"></i> <span
+                                data-i18n="home_v2.card1_li3">AI Content
+                                Engine</span></li>
+                        <li><i class="ph-fill ph-check-circle" style="color: var(--color-primary);"></i> <span
+                                data-i18n="home_v2.card1_li4">Lead Gen
+                                Systems</span></li>
+                    </ul>
+                </div>
+
+                <div class="glass-card ai-feature-card fade-up stagger-1">
+                    <div
+                        style="width: 60px; height: 60px; background: rgba(59,130,246,0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; border: 1px solid rgba(59,130,246,0.2);">
+                        <i class="ph ph-chart-polar" style="font-size: 2rem; color: #3b82f6;"></i>
+                    </div>
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1.4rem;" data-i18n="home_v2.card2_title">Performance
+                        Marketing</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><i class="ph-fill ph-check-circle" style="color: #3b82f6;"></i> <span
+                                data-i18n="home_v2.card2_li1">Meta Ads Strategy</span></li>
+                        <li><i class="ph-fill ph-check-circle" style="color: #3b82f6;"></i> <span
+                                data-i18n="home_v2.card2_li2">TikTok Campaigns</span></li>
+                        <li><i class="ph-fill ph-check-circle" style="color: #3b82f6;"></i> <span
+                                data-i18n="home_v2.card2_li3">Conversion Optimization</span></li>
+                        <li><i class="ph-fill ph-check-circle" style="color: #3b82f6;"></i> <span
+                                data-i18n="home_v2.card2_li4">Campaign Scaling</span></li>
+                    </ul>
+                </div>
+
+                <div class="glass-card ai-feature-card fade-up stagger-2">
+                    <div
+                        style="width: 60px; height: 60px; background: rgba(236,72,153,0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; border: 1px solid rgba(236,72,153,0.2);">
+                        <i class="ph ph-sparkle" style="font-size: 2rem; color: #ec4899;"></i>
+                    </div>
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1.4rem;" data-i18n="home_v2.card3_title">Brand
+                        Experience</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><i class="ph-fill ph-check-circle" style="color: #ec4899;"></i> <span
+                                data-i18n="home_v2.card3_li1">High-Conv Landing Pages</span></li>
+                        <li><i class="ph-fill ph-check-circle" style="color: #ec4899;"></i> <span
+                                data-i18n="home_v2.card3_li2">Creative Strategy</span></li>
+                        <li><i class="ph-fill ph-check-circle" style="color: #ec4899;"></i> <span
+                                data-i18n="home_v2.card3_li3">Visual Identity</span></li>
+                        <li><i class="ph-fill ph-check-circle" style="color: #ec4899;"></i> <span
+                                data-i18n="home_v2.card3_li4">Digital Experiences</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- AI STACK MARQUEE -->
+    <div class="marquee-container fade-up">
+        <div class="marquee-content">
+            <!-- X2 for seamless loop -->
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i> ChatGPT
+            </div>
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i> Claude
+            </div>
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i>
+                Midjourney</div>
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i> Cursor
+            </div>
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i> n8n</div>
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i> Make
+            </div>
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i> Replit
+            </div>
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i> Lovable
+            </div>
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i> Meta Ads
+            </div>
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i> TikTok
+                Ads</div>
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i> Figma
+            </div>
+
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i> ChatGPT
+            </div>
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i> Claude
+            </div>
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i>
+                Midjourney</div>
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i> Cursor
+            </div>
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i> n8n</div>
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i> Make
+            </div>
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i> Replit
+            </div>
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i> Lovable
+            </div>
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i> Meta Ads
+            </div>
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i> TikTok
+                Ads</div>
+            <div class="marquee-item"><i class="ph-fill ph-lightning" style="color: var(--color-primary)"></i> Figma
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <!-- FEATURED PROJECTS -->
+        <section class="section-padding fade-up" id="projects">
+            <div
+                style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <h2 data-i18n="home_v2.proj_title">Featured <span class="text-gradient">Projects</span></h2>
+                    <p style="margin: 0; max-width: 500px;" data-i18n="home_v2.proj_desc">Case studies về các hệ thống
+                        tăng trưởng đã được kiểm chứng
+                        bằng data thực tế.</p>
+                </div>
+                <a href="/pages/projects.html" class="link-arrow"><span data-i18n="home_v2.proj_view_all">View All
+                        Work</span> <i class="ph ph-arrow-right"></i></a>
             </div>
 
             <div class="grid-2">
                 <article class="portfolio-card fade-up">
-                    <div class="portfolio-img">
-                        <img src="/assets/images/project.png" alt="Eutek Launch">
+                    <div class="portfolio-img" style="height: 300px;">
+                        <img src="/assets/images/project.png" alt="Project"
+                            style="object-fit: cover; width: 100%; height: 100%;">
                     </div>
-                    <h3>Eutek Ecosystem Launch</h3>
-                    <p class="portfolio-desc text-lead" style="font-size: 1rem;" data-i18n="home.eutek_desc">Mở rộng tệp
-                        người tiêu dùng cho thiết bị điện gia dụng qua tối ưu hóa phân khúc khách hàng mục tiêu và video
-                        ads cấu trúc cao.</p>
-                    <a href="/pages/project-detail.html" class="link-arrow"><span data-i18n="home.read_case">Đọc Case
-                            Study</span> <i class="ph ph-arrow-right"></i></a>
+                    <h3 data-i18n="home_v2.proj1_title">Eutek Ecosystem Launch</h3>
+                    <p class="portfolio-desc text-lead" style="font-size: 1rem;" data-i18n="home_v2.proj1_desc">Tối ưu
+                        hóa phân khúc khách hàng mục
+                        tiêu và video ads cấu trúc cao cho thiết bị điện gia dụng.</p>
+                    <div style="display: flex; gap: 0.5rem; margin: 1rem 0;">
+                        <span class="tag" style="margin:0; font-size: 0.75rem;">Meta Ads</span>
+                        <span class="tag" style="margin:0; font-size: 0.75rem;">Conversion</span>
+                    </div>
                 </article>
 
                 <article class="portfolio-card fade-up stagger-1">
-                    <div class="portfolio-img">
-                        <img src="/assets/images/project.png" alt="L.Bee Fashion">
+                    <div class="portfolio-img" style="height: 300px;">
+                        <img src="/assets/images/project.png" alt="Project"
+                            style="object-fit: cover; width: 100%; height: 100%;">
                     </div>
-                    <h3>L.Bee Fashion Rebrand</h3>
-                    <p class="portfolio-desc text-lead" style="font-size: 1rem;" data-i18n="home.lbee_desc">Quản lý các
-                        chiến dịch quảng cáo thời trang hiệu suất cao và tái cấu trúc bản sắc hình ảnh doanh nghiệp trên
-                        toàn bộ các trang web.</p>
-                    <a href="/pages/project-detail.html" class="link-arrow"><span data-i18n="home.read_case">Đọc Case
-                            Study</span> <i class="ph ph-arrow-right"></i></a>
+                    <h3 data-i18n="home_v2.proj2_title">AI CRM Automations</h3>
+                    <p class="portfolio-desc text-lead" style="font-size: 1rem;" data-i18n="home_v2.proj2_desc">Hệ thống
+                        tự động phân loại lead và gửi
+                        email personalized dựa trên AI.</p>
+                    <div style="display: flex; gap: 0.5rem; margin: 1rem 0;">
+                        <span class="tag" style="margin:0; font-size: 0.75rem;">Make</span>
+                        <span class="tag" style="margin:0; font-size: 0.75rem;">ChatGPT API</span>
+                    </div>
                 </article>
-            </div>
-
-            <div class="text-center" style="margin-top: 4rem;">
-                <a href="/pages/projects.html" class="btn btn-secondary" data-i18n="home.btn_all_projects">Xem Tất Cả Dự
-                    Án</a>
             </div>
         </section>
 
-        <!-- CTA -->
+        <!-- EXPERIENCE TIMELINE -->
+        <section class="section-padding fade-up">
+            <div class="section-header text-center">
+                <h2 data-i18n="home_v2.exp_title">Experience <span class="text-gradient">Timeline</span></h2>
+            </div>
+            <div class="timeline" style="max-width: 800px; margin: 0 auto;">
+                <div class="timeline-item fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card" style="padding: 2rem;">
+                        <span class="tag" style="margin: 0 0 1rem 0; font-size: 0.75rem;"><i class="ph ph-calendar"></i>
+                            <span data-i18n="home_v2.exp_time1">2026 - Present</span></span>
+                        <h3 style="font-size: 1.4rem;" data-i18n="home_v2.exp_role1">Growth Operator & Brand Specialist
+                        </h3>
+                        <h4 style="color: var(--color-primary); margin-bottom: 1rem;"><i
+                                class="ph-fill ph-briefcase"></i> <span data-i18n="home_v2.exp_company1">Minh Hoàng
+                                Smart City</span></h4>
+                        <p style="margin: 0;" data-i18n="home_v2.exp_desc1">Dẫn dắt chiến lược tiếp thị, tự động hóa
+                            bằng AI và scale up doanh thu
+                            thiết bị gia dụng.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card" style="padding: 2rem;">
+                        <span class="tag" style="margin: 0 0 1rem 0; font-size: 0.75rem;"><i class="ph ph-calendar"></i>
+                            <span data-i18n="home_v2.exp_time2">2024 - 2026</span></span>
+                        <h3 style="font-size: 1.4rem;" data-i18n="home_v2.exp_role2">Digital Marketing Specialist</h3>
+                        <h4 style="color: var(--color-primary); margin-bottom: 1rem;"><i
+                                class="ph-fill ph-briefcase"></i> <span data-i18n="home_v2.exp_company2">D.T Functional
+                                Foods</span></h4>
+                        <p style="margin: 0;" data-i18n="home_v2.exp_desc2">Quản lý Ads ngân sách lớn, phân tích data và
+                            tối ưu tỷ lệ chuyển đổi CVR.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
         <section class="section-padding fade-up text-center">
-            <h2 style="font-size: 3.5rem; margin-bottom: 1.5rem;" data-i18n="home.cta_title">Sẵn sàng mở rộng thương
-                hiệu?</h2>
-            <p class="text-lead" style="margin: 0 auto 3rem auto;" data-i18n="home.cta_desc">Hãy cùng nhau xây dựng
-                những điều ý nghĩa. Dù là chiến lược tiếp thị mới hay một chiến dịch đẩy hiệu suất đột phá.</p>
-            <a href="/pages/contact.html" class="btn btn-primary" data-i18n="home.btn_contact">Bắt đầu trò chuyện</a>
+            <div class="glass-card"
+                style="padding: 5rem 2rem; border-radius: 3rem; position: relative; overflow: hidden;">
+                <!-- background glow -->
+                <div
+                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; background: radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%); pointer-events: none;">
+                </div>
+
+                <h2 style="font-size: clamp(2.5rem, 4vw, 4rem); margin-bottom: 1.5rem; position: relative; z-index: 1;"
+                    data-i18n="home_v2.cta_title">
+                    Let's Build The <span class="text-gradient">Future</span> With AI.
+                </h2>
+                <p class="text-lead" style="margin: 0 auto 3rem auto; max-width: 600px; position: relative; z-index: 1;"
+                    data-i18n="home_v2.cta_desc">
+                    Sẵn sàng đưa thương hiệu của bạn lên một tầm cao mới với hệ thống tự động hóa và tăng trưởng đột
+                    phá?
+                </p>
+                <div
+                    style="display: flex; justify-content: center; gap: 1.5rem; position: relative; z-index: 1; flex-wrap: wrap;">
+                    <a href="/pages/contact.html" class="btn btn-primary"
+                        style="padding: 1rem 2.5rem; font-size: 1.1rem;"><i class="ph ph-envelope-simple"></i> <span
+                            data-i18n="home_v2.btn_touch">Get In
+                            Touch</span></a>
+                    <a href="https://zalo.me/0973432518" target="_blank" class="btn btn-secondary"
+                        style="padding: 1rem 2.5rem; font-size: 1.1rem;"><i class="ph ph-chat-circle"></i> <span
+                            data-i18n="home_v2.btn_call">Book a
+                            Call</span></a>
+                </div>
+            </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <div id="footer-placeholder"></div>
 
     <script src="/data/site.js"></script>

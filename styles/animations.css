@@ -141,14 +141,8 @@
    6. NAVBAR SCROLL SHRINK
    ---------------------------------------------------------- */
 .navbar.scrolled {
-    padding: 0;
     box-shadow: 0 4px 40px rgba(0, 0, 0, 0.5),
                 0 0 20px rgba(0, 212, 255, 0.06);
-}
-
-.navbar.scrolled .nav-container {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
 }
 
 

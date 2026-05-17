@@ -1,4 +1,4 @@
-﻿// scripts/utils.js
+// scripts/utils.js
 const Utils = {
     initTheme: function() {
         const themeToggle = document.getElementById('themeToggle');
@@ -207,6 +207,42 @@ const Utils = {
         window.addEventListener('scroll', () => {
             indicator.style.opacity = window.scrollY > 80 ? '0' : '';
         }, { passive: true });
+    },
+    // ── Number Counter Animation ─────────────────────────────
+    initCounters: function() {
+        const counters = document.querySelectorAll('.animate-counter');
+        if (!counters.length) return;
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.getAttribute('data-target'), 10);
+                    const duration = 2000; // 2 seconds
+                    let startTimestamp = null;
+
+                    const step = (timestamp) => {
+                        if (!startTimestamp) startTimestamp = timestamp;
+                        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                        // Ease out cubic
+                        const easeOut = 1 - Math.pow(1 - progress, 3);
+                        el.innerText = Math.floor(easeOut * target);
+                        
+                        if (progress < 1) {
+                            window.requestAnimationFrame(step);
+                        } else {
+                            el.innerText = target;
+                        }
+                    };
+                    window.requestAnimationFrame(step);
+                    obs.unobserve(el);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        counters.forEach(counter => {
+            observer.observe(counter);
+        });
     }
 };
 
