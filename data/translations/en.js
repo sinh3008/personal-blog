@@ -8,6 +8,7 @@ window.locales.en = {
             products: "Products",
             brand: "Brand/Eutek",
             blog: "Blog",
+            prompts: "AI Prompts",
             contact: "Contact"
         },
         home: {
@@ -254,6 +255,28 @@ window.locales.en = {
             btn_bot: "Open Shopping Bot",
             btn_fb: "Visit Facebook",
             btn_zalo: "Chat on Zalo"
+        },
+        prompts: {
+            title: "AI Prompt Library",
+            desc: "A curated collection of highly optimized prompts for Veo 3 video generation, ChatGPT, Gemini, and other AI tools. Ready to copy and use!",
+            filter_all: "All",
+            filter_video: "Video (Veo 3)",
+            filter_chat: "Chatbot (GPT/Gemini)",
+            filter_img: "Images (Midjourney)",
+            copy_btn: "Copy Prompt",
+            copied: "Copied!",
+            p1_title: "Veo 3 - Cinematic Trailer",
+            p1_desc: "Create a cinematic trailer video with drone shots and dramatic lighting.",
+            p1_prompt: "Cinematic drone shot of a futuristic neon city at night, rain pouring down, reflecting neon lights, 4k, hyper-realistic, dramatic lighting, motion blur, highly detailed.",
+            p2_title: "ChatGPT - PR Content Assistant",
+            p2_desc: "Highly structured prompt to write SEO-optimized PR articles for high conversion.",
+            p2_prompt: "Act as an expert Copywriter with 10 years of experience. Write an 800-word PR article introducing the product [Product Name]. Use the PAS (Problem - Agitate - Solve) formula. Tone: Professional, persuasive, focused on benefits.",
+            p3_title: "Gemini - Ads Data Analyst",
+            p3_desc: "Instruct Gemini to analyze advertising data and provide insights.",
+            p3_prompt: "Based on the following advertising data table, analyze the 3 main trends and propose 2 specific actions to reduce CPA by 20% next month. Present in clear bullet points.",
+            p4_title: "Midjourney - Cyberpunk Avatar",
+            p4_desc: "Create a cool Cyberpunk style avatar.",
+            p4_prompt: "A close up portrait of a cyberpunk hacker, glowing neon tattoos, wearing a high-tech visor, dark rainy alley background, volumetric lighting, unreal engine 5 render --ar 1:1 --v 6.0"
         },
         footer: "2026 Lê Xuân Sinh. All rights reserved."
     };

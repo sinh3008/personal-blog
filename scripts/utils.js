@@ -1,6 +1,6 @@
 // scripts/utils.js
 const Utils = {
-    initTheme: function() {
+    initTheme: function () {
         const themeToggle = document.getElementById('themeToggle');
         if (!themeToggle) return;
 
@@ -26,7 +26,7 @@ const Utils = {
         });
     },
 
-    initScrollReveal: function() {
+    initScrollReveal: function () {
         const observerOptions = {
             root: null,
             rootMargin: '0px',
@@ -49,7 +49,7 @@ const Utils = {
         }, 100);
     },
 
-    initMobileMenu: function() {
+    initMobileMenu: function () {
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
         if (hamburger && navLinks) {
@@ -60,25 +60,25 @@ const Utils = {
     },
 
     // ── Custom Cursor ─────────────────────────────────────────
-    initCustomCursor: function() {
+    initCustomCursor: function () {
         // Skip on touch devices
         if (window.matchMedia('(pointer: coarse)').matches) return;
 
-        const dot  = document.createElement('div');
+        const dot = document.createElement('div');
         const ring = document.createElement('div');
-        dot.className  = 'cursor-dot';
+        dot.className = 'cursor-dot';
         ring.className = 'cursor-ring';
         document.body.append(dot, ring);
 
         let mouseX = 0, mouseY = 0;
-        let ringX  = 0, ringY  = 0;
+        let ringX = 0, ringY = 0;
         let raf;
 
         document.addEventListener('mousemove', e => {
             mouseX = e.clientX;
             mouseY = e.clientY;
             dot.style.left = mouseX + 'px';
-            dot.style.top  = mouseY + 'px';
+            dot.style.top = mouseY + 'px';
         });
 
         // Ring follows with lerp (smoothed)
@@ -86,7 +86,7 @@ const Utils = {
             ringX += (mouseX - ringX) * 0.14;
             ringY += (mouseY - ringY) * 0.14;
             ring.style.left = ringX + 'px';
-            ring.style.top  = ringY + 'px';
+            ring.style.top = ringY + 'px';
             raf = requestAnimationFrame(animateRing);
         }
         animateRing();
@@ -105,13 +105,13 @@ const Utils = {
         });
 
         document.addEventListener('mousedown', () => dot.classList.add('clicking'));
-        document.addEventListener('mouseup',   () => dot.classList.remove('clicking'));
+        document.addEventListener('mouseup', () => dot.classList.remove('clicking'));
 
         window.addEventListener('beforeunload', () => cancelAnimationFrame(raf));
     },
 
     // ── Navbar Scroll Shrink ─────────────────────────────────
-    initNavbarShrink: function() {
+    initNavbarShrink: function () {
         const navbar = document.querySelector('.navbar');
         if (!navbar) return;
         window.addEventListener('scroll', () => {
@@ -120,18 +120,18 @@ const Utils = {
     },
 
     // ── Micro-Parallax (hero section) ───────────────────────
-    initParallax: function() {
+    initParallax: function () {
         const hero = document.querySelector('.hero-minimal');
         if (!hero) return;
 
-        const tag  = hero.querySelector('.tag');
-        const h1   = hero.querySelector('h1');
+        const tag = hero.querySelector('.tag');
+        const h1 = hero.querySelector('h1');
         const desc = hero.querySelector('.text-lead');
         const btns = hero.querySelector('.hero-actions');
 
         const layers = [
-            { el: tag,  rate: 0.25 },
-            { el: h1,   rate: 0.18 },
+            { el: tag, rate: 0.25 },
+            { el: h1, rate: 0.18 },
             { el: desc, rate: 0.12 },
             { el: btns, rate: 0.06 },
         ];
@@ -145,7 +145,7 @@ const Utils = {
     },
 
     // ── Card Tilt on Mouse Move ──────────────────────────────
-    initCardTilt: function() {
+    initCardTilt: function () {
         const cards = document.querySelectorAll('.glass-card, .portfolio-card');
         if (!cards.length) return;
 
@@ -154,15 +154,15 @@ const Utils = {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
-                const cx = rect.width  / 2;
+                const cx = rect.width / 2;
                 const cy = rect.height / 2;
                 const rotateX = ((y - cy) / cy) * -6;
-                const rotateY = ((x - cx) / cx) *  6;
+                const rotateY = ((x - cx) / cx) * 6;
 
                 card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
 
                 // Update CSS vars for glow position
-                const mx = ((x / rect.width)  * 100).toFixed(1) + '%';
+                const mx = ((x / rect.width) * 100).toFixed(1) + '%';
                 const my = ((y / rect.height) * 100).toFixed(1) + '%';
                 card.style.setProperty('--mx', mx);
                 card.style.setProperty('--my', my);
@@ -175,23 +175,23 @@ const Utils = {
     },
 
     // ── Timeline Draw on Scroll ──────────────────────────────
-    initTimelineDraw: function() {
+    initTimelineDraw: function () {
         const timeline = document.querySelector('.timeline');
         if (!timeline) return;
 
         window.addEventListener('scroll', () => {
-            const rect   = timeline.getBoundingClientRect();
-            const viewH  = window.innerHeight;
-            const total  = rect.height;
-            const start  = rect.top;
-            const drawn  = Math.max(0, Math.min(total, viewH - start));
-            const pct    = Math.round((drawn / total) * 100);
+            const rect = timeline.getBoundingClientRect();
+            const viewH = window.innerHeight;
+            const total = rect.height;
+            const start = rect.top;
+            const drawn = Math.max(0, Math.min(total, viewH - start));
+            const pct = Math.round((drawn / total) * 100);
             timeline.style.setProperty('--timeline-progress', pct + '%');
         }, { passive: true });
     },
 
     // ── Scroll Indicator on Hero ─────────────────────────────
-    initScrollIndicator: function() {
+    initScrollIndicator: function () {
         const hero = document.querySelector('.hero-minimal');
         if (!hero) return;
 
@@ -208,8 +208,102 @@ const Utils = {
             indicator.style.opacity = window.scrollY > 80 ? '0' : '';
         }, { passive: true });
     },
+
+    // ── Falling Effect Animation ─────────────────────────────
+    initFallingEffect: function (type = 'leaf') {
+        const leafContainer = document.createElement('div');
+        leafContainer.className = 'falling-container';
+
+        if (!document.getElementById('falling-effect-style')) {
+            const style = document.createElement('style');
+            style.id = 'falling-effect-style';
+            style.innerHTML = `
+                .falling-container {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    pointer-events: none;
+                    z-index: 9999;
+                }
+                .falling-item {
+                    position: absolute;
+                    top: -10%;
+                    opacity: 0;
+                }
+                .falling-item.type-leaf {
+                    color: var(--color-primary);
+                }
+                .falling-item.type-star {
+                    color: #fbbf24;
+                    text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+                }
+                .falling-item.type-snow {
+                    color: #e0f2fe;
+                    text-shadow: 0 0 8px rgba(224, 242, 254, 0.6);
+                }
+                .falling-item.type-sparkle {
+                    color: #ec4899; /* pink accent */
+                    text-shadow: 0 0 15px var(--color-primary);
+                }
+                @keyframes fall-right {
+                    0% { top: -10%; transform: translateX(0) rotate(0deg); opacity: 0; }
+                    10% { opacity: 0.6; }
+                    90% { opacity: 0.6; }
+                    100% { top: 110%; transform: translateX(150px) rotate(360deg); opacity: 0; }
+                }
+                @keyframes fall-left {
+                    0% { top: -10%; transform: translateX(0) rotate(0deg); opacity: 0; }
+                    10% { opacity: 0.6; }
+                    90% { opacity: 0.6; }
+                    100% { top: 110%; transform: translateX(-150px) rotate(-360deg); opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        document.body.appendChild(leafContainer);
+
+        const itemCount = 15;
+        for (let i = 0; i < itemCount; i++) {
+            const item = document.createElement('div');
+            item.className = `falling-item type-${type}`;
+
+            if (type === 'star') {
+                item.innerHTML = '<i class="ph-fill ph-star"></i>';
+            } else if (type === 'snow') {
+                item.innerHTML = '<i class="ph-fill ph-snowflake"></i>';
+            } else if (type === 'sparkle') {
+                item.innerHTML = '<i class="ph-fill ph-sparkle"></i>';
+            } else {
+                item.innerHTML = '<i class="ph-fill ph-leaf"></i>';
+            }
+
+            let sizeBase = 15, sizeRand = 10;
+            if (type === 'star' || type === 'sparkle') { sizeBase = 10; sizeRand = 10; }
+            else if (type === 'snow') { sizeBase = 8; sizeRand = 8; }
+            const size = Math.random() * sizeRand + sizeBase;
+            const left = Math.random() * 100;
+            const duration = Math.random() * 8 + 8;
+            const delay = Math.random() * 10;
+
+            item.style.left = `${left}%`;
+            item.style.fontSize = `${size}px`;
+            item.style.animationDelay = `${delay}s`;
+
+            if (Math.random() > 0.5) {
+                item.style.animation = `fall-right ${duration}s linear infinite`;
+            } else {
+                item.style.animation = `fall-left ${duration}s linear infinite`;
+            }
+
+            leafContainer.appendChild(item);
+        }
+    },
     // ── Number Counter Animation ─────────────────────────────
-    initCounters: function() {
+    initCounters: function () {
         const counters = document.querySelectorAll('.animate-counter');
         if (!counters.length) return;
 
@@ -227,7 +321,7 @@ const Utils = {
                         // Ease out cubic
                         const easeOut = 1 - Math.pow(1 - progress, 3);
                         el.innerText = Math.floor(easeOut * target);
-                        
+
                         if (progress < 1) {
                             window.requestAnimationFrame(step);
                         } else {

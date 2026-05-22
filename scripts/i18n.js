@@ -1,22 +1,22 @@
 ﻿// scripts/i18n.js
 const I18n = {
     currentLang: 'en',
-    
-    init: function() {
+
+    init: function () {
         this.currentLang = localStorage.getItem('lang') || 'en';
         document.documentElement.lang = this.currentLang;
         this.applyTranslations(this.currentLang);
         this.updateSwitcherUI();
     },
-    
-    applyTranslations: function(lang) {
+
+    applyTranslations: function (lang) {
         if (!window.locales || !window.locales[lang]) {
             console.warn(`Translations for ${lang} not loaded yet.`);
             return;
         }
-        
+
         const dict = window.locales[lang];
-        
+
         // Translate text content
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const keyString = el.getAttribute('data-i18n');
@@ -39,12 +39,12 @@ const I18n = {
             }
         });
     },
-    
-    getNestedValue: function(obj, path) {
+
+    getNestedValue: function (obj, path) {
         return path.split('.').reduce((acc, part) => acc && acc[part], obj);
     },
-    
-    updateSwitcherUI: function() {
+
+    updateSwitcherUI: function () {
         const langBtns = document.querySelectorAll('.lang-btn');
         langBtns.forEach(btn => {
             if (btn.getAttribute('data-lang') === this.currentLang) {
@@ -55,7 +55,7 @@ const I18n = {
         });
     },
 
-    bindLanguageSwitchers: function() {
+    bindLanguageSwitchers: function () {
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const selectedLang = e.target.getAttribute('data-lang');

@@ -8,6 +8,7 @@ window.locales.vi = {
         products: "Sản Phẩm",
         brand: "Thương Hiệu",
         blog: "Blog",
+        prompts: "AI Prompts",
         contact: "Liên Hệ"
     },
     home: {
@@ -254,6 +255,28 @@ window.locales.vi = {
         btn_bot: "Mở Bot Mua Hàng",
         btn_fb: "Ghé Thăm Facebook",
         btn_zalo: "Trao Đổi qua Zalo"
+    },
+    prompts: {
+        title: "Thư Viện AI Prompts",
+        desc: "Tuyển tập các câu lệnh (prompts) chuyên sâu dành cho việc tạo video Veo 3, ra lệnh cho ChatGPT, Gemini và nhiều công cụ AI khác. Copy và sử dụng ngay!",
+        filter_all: "Tất Cả",
+        filter_video: "Video (Veo 3)",
+        filter_chat: "Chatbot (GPT/Gemini)",
+        filter_img: "Hình Ảnh (Midjourney)",
+        copy_btn: "Sao Chép Prompt",
+        copied: "Đã sao chép!",
+        p1_title: "Veo 3 - Cinematic Trailer",
+        p1_desc: "Tạo video trailer điện ảnh với góc máy flycam, ánh sáng dramatic.",
+        p1_prompt: "Cinematic drone shot of a futuristic neon city at night, rain pouring down, reflecting neon lights, 4k, hyper-realistic, dramatic lighting, motion blur, highly detailed.",
+        p2_title: "ChatGPT - Trợ Lý Content PR",
+        p2_desc: "Prompt cấu trúc cao để viết bài PR chuẩn SEO, tối ưu tỷ lệ chuyển đổi.",
+        p2_prompt: "Đóng vai một chuyên gia Copywriter 10 năm kinh nghiệm. Viết một bài PR 800 chữ giới thiệu sản phẩm [tên sản phẩm]. Sử dụng công thức PAS (Problem - Agitate - Solve). Giọng văn: Chuyên nghiệp, thuyết phục, tập trung vào lợi ích.",
+        p3_title: "Gemini - Phân Tích Dữ Liệu Ads",
+        p3_desc: "Hướng dẫn Gemini phân tích số liệu quảng cáo và đưa ra insight.",
+        p3_prompt: "Dựa vào bảng dữ liệu quảng cáo sau đây, hãy phân tích 3 xu hướng chính và đề xuất 2 hành động cụ thể để giảm chi phí CPA xuống 20% trong tháng tới. Trình bày dưới dạng gạch đầu dòng rõ ràng.",
+        p4_title: "Midjourney - Cyberpunk Avatar",
+        p4_desc: "Tạo ảnh đại diện phong cách Cyberpunk cực ngầu.",
+        p4_prompt: "A close up portrait of a cyberpunk hacker, glowing neon tattoos, wearing a high-tech visor, dark rainy alley background, volumetric lighting, unreal engine 5 render --ar 1:1 --v 6.0"
     },
     footer: "Quyền bảo toàn pháp lý thuộc về @Lê Xuân Sinh năm 2026. Một thiết phẩm của cá nhân."
 };

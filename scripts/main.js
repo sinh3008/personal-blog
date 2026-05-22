@@ -1,14 +1,14 @@
 // scripts/main.js
 document.addEventListener("DOMContentLoaded", () => {
     // 1. Kick off component fetch
-    if(window.Components) {
+    if (window.Components) {
         window.Components.loadContent();
     }
-    
+
     // 2. Wait for components to parse and mount to DOM before firing interaction logic
     document.addEventListener('ComponentsLoaded', () => {
         // Init Themes & Handlers
-        if(window.Utils) {
+        if (window.Utils) {
             window.Utils.initTheme();
             window.Utils.initMobileMenu();
             window.Utils.initScrollReveal();
@@ -19,14 +19,15 @@ document.addEventListener("DOMContentLoaded", () => {
             window.Utils.initCardTilt();
             window.Utils.initTimelineDraw();
             window.Utils.initScrollIndicator();
+            window.Utils.initFallingEffect('leaf'); // Options: 'leaf', 'star', 'snow', 'sparkle'
         }
-        
+
         // Init i18n translation system + Switcher
-        if(window.I18n) {
+        if (window.I18n) {
             window.I18n.init();
             window.I18n.bindLanguageSwitchers();
         }
-        
+
         // Dispatch custom event for page-specific inits
         document.dispatchEvent(new Event('AppReady'));
     });

@@ -170,7 +170,7 @@ document.addEventListener('AppReady', () => {
 
         if (product) {
             const detailData = t(product.detail) || [];
-            
+
             let detailHtml = `
             <div class="article-header" style="text-align: center; max-width: 800px; margin: 0 auto; margin-bottom: 3rem;">
                 <span class="tag" style="margin-bottom: 2rem; display: inline-block;">${t(product.tag)}</span>
